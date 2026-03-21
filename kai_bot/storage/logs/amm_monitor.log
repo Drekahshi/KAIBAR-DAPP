@@ -54,3 +54,18 @@
 2026-03-20 13:26:47,285 [INFO] Hedera Agent initialized with local Ollama.
 2026-03-20 13:26:50,005 [INFO] Hedera Agent initialized with local Ollama.
 2026-03-20 13:27:06,682 [INFO] HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-03-21 03:34:16,566 [INFO] Hedera Agent initialized with local Ollama.
+2026-03-21 03:48:16,419 [ERROR] Exception in callback _ProactorBasePipeTransport._call_connection_lost()
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost()>
+Traceback (most recent call last):
+  File "C:\Users\Austin NAMUYE\AppData\Local\Programs\Python\Python313\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Austin NAMUYE\AppData\Local\Programs\Python\Python313\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-03-21 03:53:13,338 [INFO] HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-03-21 04:23:34,394 [INFO] HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-03-21 04:26:23,056 [INFO] KAI AMM Monitor initialised with 8 pools.
+2026-03-21 04:27:45,272 [INFO] KAI AMM Monitor initialised with 8 pools.

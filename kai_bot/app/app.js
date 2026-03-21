@@ -3,7 +3,7 @@
 //  Full multi-agent chat brain with animated routing
 // ═══════════════════════════════════════════════════
 
-const API_BASE = 'http://localhost:8000/api';
+const API_BASE = '/api';
 
 // ── DOM refs ─────────────────────────────────────
 const messagesEl   = document.getElementById('messages');
