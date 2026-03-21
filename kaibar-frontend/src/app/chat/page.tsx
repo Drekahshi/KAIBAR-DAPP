@@ -65,8 +65,9 @@ export default function ChatPage() {
 
       // Fallback to Python backend if Next.js route fails
       if (!res.ok) {
-        console.warn("Next.js Ollama route failed, falling back to Python API on port 8000...");
-        res = await fetch("http://localhost:8000/api/chat", {
+        const apiBase = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+        console.warn(`Next.js Ollama route failed, falling back to Python API at ${apiBase}...`);
+        res = await fetch(`${apiBase}/api/chat`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ message: msg }),

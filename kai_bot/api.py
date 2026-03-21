@@ -87,7 +87,7 @@ app.add_middleware(
 
 # Static frontend mount (legacy)
 if os.path.isdir(os.path.join(_BOT_DIR, "app")):
-    app.mount("/app", StaticFiles(directory="app", html=True), name="app")
+    app.mount("/app", StaticFiles(directory=os.path.join(_BOT_DIR, "app"), html=True), name="app")
 
 # ── Agent setup ─────────────────────────────────────────────────
 fallback = _init_agent()
