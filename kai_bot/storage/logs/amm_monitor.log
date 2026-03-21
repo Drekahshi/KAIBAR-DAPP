@@ -69,3 +69,13 @@ ConnectionResetError: [WinError 10054] An existing connection was forcibly close
 2026-03-21 04:23:34,394 [INFO] HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
 2026-03-21 04:26:23,056 [INFO] KAI AMM Monitor initialised with 8 pools.
 2026-03-21 04:27:45,272 [INFO] KAI AMM Monitor initialised with 8 pools.
+2026-03-22 00:53:15,314 [INFO] Hedera Agent initialized with local Ollama.
+2026-03-22 00:53:19,260 [INFO] Hedera Agent initialized with local Ollama.
+2026-03-22 00:53:19,472 [INFO] Hedera Agent initialized with local Ollama.
+2026-03-22 01:10:11,298 [INFO] Hedera Agent initialized with local Ollama.
+2026-03-22 01:10:15,231 [INFO] Hedera Agent initialized with local Ollama.
+2026-03-22 01:10:15,406 [INFO] Hedera Agent initialized with local Ollama.
+2026-03-22 01:10:37,970 [INFO] HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-03-22 01:11:19,180 [INFO] HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-03-22 01:11:35,589 [INFO] KAI AMM Monitor initialised with 8 pools.
+2026-03-22 01:31:50,638 [INFO] KAI AMM Monitor initialised with 8 pools.

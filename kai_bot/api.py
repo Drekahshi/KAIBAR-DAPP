@@ -93,11 +93,11 @@ if os.path.isdir(os.path.join(_BOT_DIR, "app")):
 fallback = _init_agent()
 if fallback:
     if AI_PROVIDER == "ollama":
-        print(f"🦙 Ollama mode — model: {OLLAMA_MODEL} @ {OLLAMA_BASE_URL}")
+        print(f" Ollama mode \u2014 model: {OLLAMA_MODEL} @ {OLLAMA_BASE_URL}")
     else:
-        print("🤖 Cloud AI agent initialized.")
+        print(" Cloud AI agent initialized.")
 else:
-    print("⚠️  No AI fallback. Set AI_PROVIDER=ollama or GEMINI_API_KEY in .env.")
+    print(" No AI fallback. Set AI_PROVIDER=ollama or GEMINI_API_KEY in .env.")
 
 orchestrator = AgentOrchestrator(fallback_agent=fallback)
 
@@ -110,7 +110,7 @@ if _ROUTERS_AVAILABLE:
     app.include_router(ai_router,        prefix="/api/ai",        tags=["AI Strategy"])
     app.include_router(payments_router,  prefix="/api/payments",  tags=["Payments"])
     app.include_router(hedera_router,    prefix="/api/hedera",    tags=["Hedera SDK"])
-    print("✅ All KAIBAR routers mounted.")
+    print(" All KAIBAR routers mounted.")
 
 # ══════════════════════════════════════════════════════════════════
 #  LEGACY / CORE ENDPOINTS (preserved for frontend compatibility)

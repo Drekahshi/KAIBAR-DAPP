@@ -81,16 +81,32 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Wallet button */}
-        <button onClick={() => setShowModal(true)}
-          style={{
-            background: connected ? "linear-gradient(135deg,#22C55E,#16A34A)" : "linear-gradient(135deg,#FFD700,#F97316)",
-            color: "#1B4332", fontWeight:700, fontSize:11, padding:"8px 14px",
-            borderRadius:999, border:"none", cursor:"pointer",
-            boxShadow: connected ? "0 0 12px rgba(34,197,94,0.4)" : "0 0 12px rgba(255,215,0,0.4)",
-          }}>
-          {connected ? `✓ ${accountId.substring(0,12)}…` : "🔗 Connect"}
-        </button>
+        {/* Top Actions */}
+        <div style={{ display: "flex", gap: 8 }}>
+          <button onClick={() => {
+            const email = window.prompt("Join our Waitlist for early access! Enter your email:");
+            if (email) alert(`Thanks! ${email} has been added to the waitlist.`);
+          }}
+            style={{
+              background: "rgba(236,72,153,0.15)", border: "1px solid rgba(236,72,153,0.4)",
+              color: "#EC4899", fontWeight:700, fontSize:11, padding:"8px 14px",
+              borderRadius:999, cursor:"pointer",
+              boxShadow: "0 0 8px rgba(236,72,153,0.2)",
+            }}>
+            🚀 Waitlist
+          </button>
+
+          {/* Wallet button */}
+          <button onClick={() => setShowModal(true)}
+            style={{
+              background: connected ? "linear-gradient(135deg,#22C55E,#16A34A)" : "linear-gradient(135deg,#FFD700,#F97316)",
+              color: "#1B4332", fontWeight:700, fontSize:11, padding:"8px 14px",
+              borderRadius:999, border:"none", cursor:"pointer",
+              boxShadow: connected ? "0 0 12px rgba(34,197,94,0.4)" : "0 0 12px rgba(255,215,0,0.4)",
+            }}>
+            {connected ? `✓ ${accountId.substring(0,12)}…` : "🔗 Connect"}
+          </button>
+        </div>
       </div>
 
       {/* ── HCS-10 BADGE ── */}
@@ -305,6 +321,44 @@ export default function Home() {
             <ChevronRight color="#3B82F6" opacity={0.5} />
           </div>
         </Link>
+      </div>
+      {/* ── WAITLIST (DEV MODE) ── */}
+      <div style={{ padding:"0 16px 14px" }}>
+        <div className="glass" style={{
+          padding:"20px", borderRadius:20, display:"flex", flexDirection:"column", gap:12,
+          background:"linear-gradient(135deg, rgba(236,72,153,0.1), rgba(236,72,153,0.05))",
+          border:"1px solid rgba(236,72,153,0.2)", position:"relative", overflow:"hidden"
+        }}>
+          <div style={{ display:"flex", alignItems:"center", gap:10 }}>
+            <div style={{
+              width:40, height:40, borderRadius:"50%", background:"#EC489920", border:"2px solid #EC489950",
+              display:"flex", alignItems:"center", justifyContent:"center", fontSize:20,
+              boxShadow:"0 0 16px #EC489930", flexShrink:0
+            }}>🚀</div>
+            <div>
+              <h3 style={{ fontSize:15, fontWeight:800, color:"#EC4899", margin:"0 0 2px" }}>Join the Waitlist</h3>
+              <p style={{ fontSize:10, color:"rgba(255,255,255,0.6)", margin:0 }}>We're actively debugging our Vercel deployment. Drop your email for early access!</p>
+            </div>
+          </div>
+          <form onSubmit={(e) => {
+            e.preventDefault();
+            const email = (e.currentTarget.elements.namedItem('email') as HTMLInputElement).value;
+            if(email) {
+              alert(`Thanks! ${email} has been added to the waitlist.`);
+              e.currentTarget.reset();
+            }
+          }} style={{ display:"flex", gap:8 }}>
+            <input name="email" type="email" placeholder="Enter your email..." required style={{
+              flex:1, background:"rgba(0,0,0,0.3)", border:"1px solid rgba(236,72,153,0.3)",
+              borderRadius:10, padding:"8px 12px", color:"#fff", fontSize:12, outline:"none"
+            }} />
+            <button type="submit" style={{
+              background:"linear-gradient(135deg,#EC4899,#BE185D)", color:"#fff", fontWeight:700, fontSize:12,
+              padding:"8px 16px", borderRadius:10, border:"none", cursor:"pointer",
+              boxShadow:"0 0 12px rgba(236,72,153,0.4)"
+            }}>Join</button>
+          </form>
+        </div>
       </div>
 
       {/* ── ECOSYSTEM STATS ── */}
